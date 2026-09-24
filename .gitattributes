@@ -1,0 +1,29 @@
+# Gestione automatica dei file di testo
+* text=auto
+
+# Codice e configurazioni: sempre LF, compatibile con Windows e Colab/Linux
+*.c text eol=lf
+*.h text eol=lf
+*.md text eol=lf
+*.txt text eol=lf
+*.csv text eol=lf
+# Frozen scientific CSV identities: preserve exact bytes
+manifest_events_272.csv -text -eol
+manifest_tensors_75_central.csv -text -eol
+manifest_tensors_112_central.csv -text -eol
+manifest_tensors_224_central.csv -text -eol
+split_train_indices_seed123.csv -text -eol
+split_val_indices_seed123.csv -text -eol
+sakai_multires_c/configs/subset224_train_800_seed123.csv -text -eol
+sakai_multires_c/configs/subset224_val_200_seed123.csv -text -eol
+*.json text eol=lf
+*.yml text eol=lf
+*.yaml text eol=lf
+
+# File binari: non modificare mai i byte
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.pdf binary
+*.bin binary
+*.odt binary

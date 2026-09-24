@@ -1,0 +1,9 @@
+# Requires Python 3.12.14 exactly for the frozen spectral bridge
+# reproduction contract.
+# Package versions below are checked exactly by the bridge.
+
+numpy==2.5.3
+scipy==1.16.3
+scikit-learn==1.6.1
+joblib==1.6.0
+threadpoolctl==3.7.0

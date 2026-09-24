@@ -1,0 +1,93 @@
+cff-version: 1.2.0
+message: "Se utilizzi il software o i materiali originali di questa repository, cita la repository e la tesi; cita inoltre il dataset Gravity Spy e il riferimento metodologico di Sakai quando pertinenti."
+title: "Machine Learning per Clustering ed Analisi dei Glitch dei Rivelatori Interferometrici di Onde Gravitazionali"
+type: software
+authors:
+  - family-names: Carzedda
+    given-names: Laura
+abstract: "Questa repository raccoglie codice, notebook e contratti riproducibili sviluppati per lo studio non supervisionato dei glitch rappresentati nel dataset Gravity Spy O1. La pipeline combina preprocessing multirisoluzione, variational autoencoder, Invariant Information Clustering e clustering spectral, mantenendo separate la costruzione label-blind delle partizioni e la valutazione post-hoc. I dataset e gli artifact scientifici pesanti sono gestiti esternamente."
+keywords:
+  - machine learning
+  - unsupervised learning
+  - gravitational waves
+  - glitches
+  - Gravity Spy
+  - variational autoencoder
+  - invariant information clustering
+  - spectral clustering
+license: MIT
+preferred-citation:
+  type: thesis
+  title: "Machine Learning per Clustering ed Analisi dei Glitch dei Rivelatori Interferometrici di Onde Gravitazionali"
+  authors:
+    - family-names: Carzedda
+      given-names: Laura
+  institution:
+    name: "Università Telematica Internazionale UNINETTUNO"
+  department: "Facoltà di Ingegneria"
+  thesis-type: "Tesi di Laurea Triennale in Ingegneria Informatica"
+  year: 2026
+  notes: "Elaborato Finale in Reti Neurali."
+references:
+  - type: data
+    title: "Machine learning for Gravity Spy: Glitch classification and dataset"
+    authors:
+      - family-names: Bahaadini
+        given-names: Sara
+      - family-names: Noroozi
+        given-names: Vahid
+      - family-names: Rohani
+        given-names: Neda
+      - family-names: Coughlin
+        given-names: Scott
+      - family-names: Zevin
+        given-names: Michael
+      - family-names: Smith
+        given-names: Joshua
+      - family-names: Kalogera
+        given-names: Vicky
+      - family-names: Katsaggelos
+        given-names: Aggelos
+    version: v1.0.0
+    doi: "10.5281/zenodo.1476156"
+    publisher:
+      name: Zenodo
+    date-published: "2018-10-31"
+    year: 2018
+    license: CC-BY-4.0
+  - type: article
+    title: "Unsupervised learning architecture for classifying the transient noise of interferometric gravitational-wave detectors"
+    authors:
+      - family-names: Sakai
+        given-names: Yusuke
+      - family-names: Itoh
+        given-names: Yousuke
+      - family-names: Jung
+        given-names: Piljong
+      - family-names: Kokeyama
+        given-names: Keiko
+      - family-names: Kozakai
+        given-names: Chihiro
+      - family-names: Nakahira
+        given-names: Katsuko T.
+      - family-names: Oshino
+        given-names: Shoichi
+      - family-names: Shikano
+        given-names: Yutaka
+      - family-names: Takahashi
+        given-names: Hirotaka
+      - family-names: Uchiyama
+        given-names: Takashi
+      - family-names: Ueshima
+        given-names: Gen
+      - family-names: Washimi
+        given-names: Tatsuki
+      - family-names: Yamamoto
+        given-names: Takahiro
+      - family-names: Yokozawa
+        given-names: Takaaki
+    journal: Scientific Reports
+    volume: 12
+    year: 2022
+    date-published: "2022-06-15"
+    doi: "10.1038/s41598-022-13329-4"

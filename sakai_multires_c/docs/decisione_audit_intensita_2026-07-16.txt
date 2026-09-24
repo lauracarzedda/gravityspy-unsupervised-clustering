@@ -1,0 +1,38 @@
+﻿DECISIONE FINALE - AUDIT CODIFICA INTENSITA
+Data: 16 luglio 2026
+
+Dataset esaminato:
+- PNG originali Gravity Spy RGB/RGBA;
+- immagini preprocessate 272x224 grayscale;
+- 22 classi;
+- un evento completo per classe;
+- quattro durate per evento;
+- totale audit: 88 immagini.
+
+Risultati:
+- la pipeline legacy e stata riprodotta esattamente su 88/88 immagini;
+- pixel differenti rispetto ai file esistenti: 0;
+- correlazione Pearson media tra luminanza e indice di palette: 0.985839;
+- correlazione minima: 0.964394;
+- la morfologia risulta conservata anche nei casi visivamente piu critici;
+- le differenze maggiori riguardano scala, offset, bordi ad alto contrasto
+  e regioni sature, soprattutto nella classe Extremely_Loud.
+
+Interpretazione:
+Le immagini attuali rappresentano la luminanza della palette RGB e non
+necessariamente il valore scalare originale della normalised energy.
+Il paper di Sakai non documenta il passaggio dalle PNG pubbliche alla
+rappresentazione monocanale usata dagli autori.
+
+Decisione:
+- mantenere il dataset corrente come versione primaria;
+- identificativo: legacy_luma_v1;
+- non rigenerare out272_gray;
+- non rigenerare i tensori centrali 224, 112 e 75;
+- mantenere la normalizzazione uint8 / 255.0f nel loader;
+- documentare che si tratta di una ricostruzione riproducibile dalle PNG pubbliche;
+- considerare palette_index_v2 soltanto come futuro ablation study.
+
+Impatto:
+L'audit della codifica dell'intensita e chiuso.
+Si puo procedere alla revisione della perturbazione temporale.

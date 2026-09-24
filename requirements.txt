@@ -1,0 +1,12 @@
+# General Python dependencies for the published full224 notebooks and
+# Python tools; this is not a frozen lock file for the historical GPU run.
+# Historical provenance: Python 3.13.15, torch 2.11.0+cu128 / CUDA 12.8.
+
+matplotlib
+numpy
+Pillow
+psutil
+scikit-learn==1.6.1
+scipy
+threadpoolctl
+torch

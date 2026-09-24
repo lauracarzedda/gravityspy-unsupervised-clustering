@@ -1,0 +1,6 @@
+profile_id,role,input_side,conv_depth,c1,c2,c3,c4,latent_dim,bottleneck_side,trainable_parameters_bn1d,forward_mac_per_sample,status
+mini75_smoke_v1,engineering_smoke,75,3,8,16,32,0,32,5,41572,5620896,primary_smoke
+mini75_experiment_v1,optional_full_split_experiment,75,3,16,32,64,0,32,5,106116,18356544,optional_after_smoke
+mini112_primary_v1,primary_c_experiment,112,3,16,32,64,0,64,7,262852,39948288,primary
+mini112_scaleup_v1,optional_scaleup,112,3,32,64,128,0,128,7,1035652,141729792,optional_after_benchmark
+mini224_bridge_v1,project_bridge_candidate,224,4,16,32,64,128,64,7,625860,220790784,candidate_pending_224_smoke

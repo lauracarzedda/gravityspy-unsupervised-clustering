@@ -1,0 +1,21 @@
+/* Profile binding for the existing label-free, atomic H artifact producer. */
+#define H_CENTRAL_HEADER "vae_c_iic_mini112_central.h"
+#define H_CENTRAL_TYPE VAECIICMini112Central
+#define H_CENTRAL_ROW_TYPE VAECIICMini112CentralRow
+#define H_CENTRAL_INIT vae_c_iic_mini112_central_init
+#define H_CENTRAL_LOAD vae_c_iic_mini112_central_load
+#define H_CENTRAL_FREE vae_c_iic_mini112_central_free
+#define H_SOURCE_TRAIN VAE_C_IIC_MINI112_SOURCE_TRAIN
+#define H_SOURCE_VALIDATION VAE_C_IIC_MINI112_SOURCE_VALIDATION
+#define H_ROWS VAE_C_IIC_MINI112_ROWS
+#define H_LATENT_DIM VAE_C_IIC_MINI112_LATENT_DIM
+#define H_RUN_ID "mini112_iic_v1_0cecf5cd656d0d61a237d50fcf96a7890fb2e6d052ef403051bc9bc17aed8fba"
+#define H_FINAL_SHA "c4a989377434ddc2f589cd76362e9263078411423e30144d4137a686bcf76f60"
+#define H_RUN_CONFIG_SHA "7d6514dd2a3acc5b2b88313e4d75770f9cce3bb834ddda75f6d460e9f7cfd598"
+#define H_EMBEDDING_DIR "mini112_primary_v1_full_best_epoch97_posterior_mu_central_v1"
+#define H_TENSOR_MANIFEST "manifest_tensors_112_central.csv"
+#define H_PROFILE_ID "mini112_primary_v1"
+#define H_IIC_BASE_COMMIT "887046ce505dcca7f09bc8e51ea2b59332d8b4f6"
+#define H_IIC_BINARY_SHA "c41b49f6671678a94c6ee6b62538785249ec3bbc5a000822917f4b975d7f3333"
+
+#include "build_vae_c_iic_h_mini75.c"

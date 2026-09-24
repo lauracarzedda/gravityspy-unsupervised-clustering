@@ -1,0 +1,56 @@
+# File compilati
+*.exe
+*.o
+*.obj
+*.dll
+*.a
+*.lib
+*.pdb
+
+# File temporanei
+*.tmp
+*.log
+Thumbs.db
+.DS_Store
+
+# Archivi e backup locali
+*.zip
+*.7z
+*.rar
+
+# Cartelle di compilazione
+build/
+bin/
+
+# Impostazioni locali dell'editor
+.vscode/
+
+# Dataset pesanti generati
+out272_gray/
+tensors_224_central_uint8/
+tensors_112_central_uint8/
+tensors_75_central_uint8/
+
+# Preview rigenerabili
+tensor_test_preview/
+tensor_bin_preview/
+tensor_test_preview/audit_intensity_v1/
+augmentation_patch_input/
+backups/
+audit_intensity_v1/
+
+# Python / Jupyter caches
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.ipynb_checkpoints/
+
+# Virtual environments
+.venv/
+venv/
+
+# CMake generated files
+CMakeFiles/
+Testing/
+CMakeCache.txt
+cmake_install.cmake

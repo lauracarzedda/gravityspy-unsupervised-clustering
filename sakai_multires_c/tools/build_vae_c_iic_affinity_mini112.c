@@ -1,0 +1,10 @@
+/* Frozen mini112 source identity bound to the validated affinity producer. */
+#define RUN_ID "mini112_iic_v1_0cecf5cd656d0d61a237d50fcf96a7890fb2e6d052ef403051bc9bc17aed8fba"
+#define H_SHA "0bed4a58f3d5b32f37a44ebc76cf630b33a3fa17fa9199ff8a428c99426faf4d"
+#define ROWS_SHA "6e09d72e3b54f213a2096edffca627fd35f1f0e35778539f05a810a788d7c642"
+#define H_SPEC_SHA "bcc6cb30e902e3a250932d68ae34548ab63815f4ffecddc6877e8ae46515faf8"
+#define H_MANIFEST_SHA "3fc03f4a5a199ca5bdfaf2e690da29d4b97367f4a45bc5a408f00b32338ad890"
+#define FINAL_SHA "c4a989377434ddc2f589cd76362e9263078411423e30144d4137a686bcf76f60"
+#define SOURCE_MODE "canonical_mini112"
+
+#include "build_vae_c_iic_affinity_mini75.c"
