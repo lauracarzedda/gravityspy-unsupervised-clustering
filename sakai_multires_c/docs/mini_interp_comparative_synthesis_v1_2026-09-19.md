@@ -9,7 +9,7 @@
 - HEAD di redazione: `219c5a0ebede1cf61fc42e445a07cfea78b440c5`
 - Stato: sintesi interpretativa post-hoc delle partizioni congelate; nessun nuovo fit, ranking, rendering o calcolo di metriche
 
-Il report di audit High precedente aveva concluso con il verdetto `PASS_WITH_REQUIRED_REWORDING`. Il presente documento incorpora le riformulazioni obbligatorie verificate nell'audit Ultra MINI-INTERP-3U. I report precedenti restano invariati come documentazione storica e non vengono sostituiti o cancellati.
+Il presente documento consolida le riformulazioni associate alla revisione `MINI-INTERP-3U`; i report precedenti restano disponibili come documentazione storica.
 
 ## Fonti effettivamente utilizzate
 
@@ -17,14 +17,14 @@ La sintesi usa esclusivamente risultati, tabelle e revisioni visive già prodott
 
 1. le evaluation comuni ufficiali pubblicate da `evaluate_vae_c_iic_spectral_common`, commit produttore `b4ddd83c46fa9609d72a1908fd860ac4b7c27a2b`, sorgente SHA-256 `83a9b3556f29e5afdeb744999cb648dea6f8b75696c9208133e3d36b91d9bca2` e binario SHA-256 `2ee84331c8d6cb41b4a61007f19afa5bcd543d23672e6dd5455719fe530ffd55`;
 2. le letture morfologiche complete MINI-INTERP-2A, MINI-INTERP-2B e MINI-INTERP-2C, basate sulle 36 contact sheet ufficiali di ciascun profilo mini;
-3. il report comparativo MINI-INTERP-3 e l'audit scientifico Ultra MINI-INTERP-3U;
+3. il report comparativo MINI-INTERP-3 e la relativa verifica scientifica MINI-INTERP-3U;
 4. la revisione post-hoc full224 PRIMARY già completata, insieme al recap locale `recap15_3_notebook06_ultra_dettagliato_full224_finale_2026-09-04(4).pdf`, SHA-256 `af41807d38fcb3733eec09ea93e704d527696a005de4043ad329a552cfd92c6a`;
 5. lo snapshot locale del paper Sakai, SHA-256 `ed87489ee24029e0d43177b7475bc0518b03676faef451b100f0d77daac41ec2`;
 6. le decisioni PROJECT versionate sul backend spectral e sulla valutazione post-hoc comune.
 
 Le evaluation ufficiali sono sotto `sakai_multires_c/results/vae_c/iic/common_posthoc_evaluation_v1`; le contact sheet mini esaminate sono sotto `sakai_multires_c/results/vae_c/iic/common_contact_sheets_v1`.
 
-Le copie esportate dei tre report morfologici mini esaminate nell'audit avevano rispettivamente SHA-256 `b25ef8f3e2e561d3ba44fa77b84d270ce4cdb5ee88060b13d0bf6a377b825912`, `c660aea20304d7e1beba8e4864076a5340c66b2f1d6d19f8ef750cb9d1d021c7` e `803dd7f2e3f1a1876190c0c627e5de4bd9682ed1b77b0d143cf01df028d15956` per mini75, mini112 e mini224_1000.
+Le copie esportate dei tre report morfologici mini avevano rispettivamente SHA-256 `b25ef8f3e2e561d3ba44fa77b84d270ce4cdb5ee88060b13d0bf6a377b825912`, `c660aea20304d7e1beba8e4864076a5340c66b2f1d6d19f8ef750cb9d1d021c7` e `803dd7f2e3f1a1876190c0c627e5de4bd9682ed1b77b0d143cf01df028d15956` per mini75, mini112 e mini224_1000.
 
 ### Identità delle evaluation ufficiali
 
@@ -133,7 +133,7 @@ Nel subset, i cluster contengono da 6 a 98 eventi; 7 cluster sono puri, 15 raggi
 7. I top-5 sono strumenti di interpretazione dei nuclei prototipici. Le tabelle complete, non le sole immagini, definiscono composizione e frammentazione dei cluster.
 8. Mini224_1000 deve restare in una sezione separata: popolazione, capacità e rappresentazione differiscono, quindi non si usa per ordinare causalmente i profili per risoluzione.
 
-## Paragrafi utilizzabili nella tesi
+## Sintesi interpretativa
 
 Sulla popolazione transduttiva comune di 8583 eventi, le partizioni mini75, mini112 e full224 PRIMARY mostrano un incremento osservazionale di purity pesata, NMI, ARI, homogeneity e completeness. La condivisione della popolazione rende possibile un confronto descrittivo uniforme mediante lo stesso evaluator, ma non consente di attribuire le differenze alla sola risoluzione delle immagini: cambiano anche capacità del modello, dimensionalità latente e rappresentazione appresa. I risultati vanno quindi presentati come confronto fra pipeline complete congelate.
 
@@ -153,7 +153,7 @@ Il confronto con Sakai riguarda la sequenza scientifica generale e le scelte dic
 
 Questi numeri non devono essere accostati come stime equivalenti della stessa grandezza. Analogamente, le configurazioni locali non dimostrano le sottoclassi fisiche discusse nel PAPER: eventuali somiglianze morfologiche restano ipotesi interpretative prudenti.
 
-## Limiti e lavoro interpretativo residuo
+## Limiti interpretativi
 
 - Le differenze tra mini75, mini112 e full224 sono confondenti rispetto a risoluzione, capacità, latent dimension e training; non supportano inferenze causali isolate.
 - Mini224_1000 usa una popolazione differente e non entra nel confronto quantitativo a parità di N.
@@ -163,7 +163,7 @@ Questi numeri non devono essere accostati come stime equivalenti della stessa gr
 - Le categorie di coerenza visiva sono descrittive e non costituiscono una metrica addestrata o un test statistico.
 - La variazione fra seed, fit o campioni non è stimata da queste singole partizioni congelate.
 - Nessuna nuova sottoclasse fisica è dichiarata e nessuna equivalenza numerica con Sakai è rivendicata.
-- La discussione t-SNE completa del full224 non è completata né sostituita da questo documento; resta un'attività interpretativa separata.
+- L'analisi t-SNE del full224 è discussa separatamente come supporto qualitativo alla lettura delle strutture latenti.
 
 ## Conclusione
 

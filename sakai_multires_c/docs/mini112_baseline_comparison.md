@@ -190,14 +190,11 @@ non la baseline primaria.
 
 ## Ruolo raccomandato delle configurazioni
 
-```text
-UNIVERSAL_WINNER=false
-PRIMARY_CROSS_RESOLUTION_BASELINE=no_pca_k36
-HIGH_VARIANCE_PCA_ABLATION=pca99_k36
-COMPACT_PCA_ABLATION=pca95_k36
-AGGRESSIVE_COMPRESSION_ABLATION=pca90
-CLASS_COUNT_CONTROL=k22
-```
+Non emerge un vincitore universale. La configurazione no-PCA con `k36` è la
+baseline primaria per il confronto fra risoluzioni; `pca99/k36` rappresenta
+l'ablation ad alta conservazione della varianza, `pca95/k36` il compromesso
+compatto e `pca90` la compressione aggressiva. `k22` resta il controllo legato
+al numero di classi.
 
 Questi ruoli derivano congiuntamente dal protocollo, dalle cinque metriche
 validation, dalla dimensionalità, dal bilanciamento dei cluster e dalla

@@ -10,12 +10,11 @@ Il confronto usa soltanto artefatti ufficiali già esistenti e rivalidati. Non
 introduce nuovi fit, trasformazioni, assegnazioni o metriche. Le label Gravity
 Spy sono usate esclusivamente a posteriori.
 
-## 2. Branch e checkpoint
+## 2. Provenance
 
 - branch: `baseline-matched-subset1000-no-pca`;
 - checkpoint: `60fcdeeab3cb416033c4901999b1cf1888435675`;
-- commit: `Make matched validators downstream-aware`;
-- stato iniziale: working tree pulita e staging vuoto.
+- commit: `Make matched validators downstream-aware`.
 
 ## 3. Subset congelato e identità degli eventi
 
@@ -32,13 +31,9 @@ L'identità è stata verificata per `row_index`, `split_pos`,
 `manifest_index`, `event_index`, `event_id` e `split`. Gli insiemi train e
 validation non hanno sovrapposizioni.
 
-```text
-ALL_THREE_MATCHED_ROW_MAPS_IDENTICAL=true
-MATCHED_SUBSET_EVENT_SET_IDENTICAL=true
-TRAIN_ROWS=800
-VALIDATION_ROWS=200
-OVERLAP=0
-```
+Le tre row map coincidono e identificano lo stesso insieme di eventi. Le
+mappe contengono 800 righe train e 200 righe validation, con sovrapposizione
+pari a 0.
 
 ## 4. Protocollo comune
 
@@ -240,27 +235,25 @@ metriche né dall'inerzia.
 
 La configurazione primaria matched è `mini112_pool7/k36`, giustificata
 congiuntamente da quattro metriche validation leader, cluster massimo più
-piccolo, identità del subset, assenza di PCA e confrontabilità con il futuro
-mini VAE in C.
+piccolo, identità del subset, assenza di PCA e confrontabilità con il mini
+VAE in C.
 
 `mini75_pool5/k36` e `mini224_pool14/k36` restano rispettivamente i controlli
 a risoluzione ridotta e alta. `k=22` resta il controllo legato al numero
 delle classi note.
 
-## 17. Ruoli finali
+## 17. Ruoli metodologici
 
-```text
-UNIVERSAL_WINNER=false
-PRIMARY_MATCHED_BASELINE=mini112_pool7_k36
-COMPLETENESS_LEADER=mini75_pool5_k36
-LOW_RESOLUTION_CONTROL=mini75_pool5_k36
-HIGH_RESOLUTION_CONTROL=mini224_pool14_k36
-CLASS_COUNT_CONTROL=k22
-RESOLUTION_ONLY_CAUSAL_CLAIM=false
-EXTRACTOR_CONFIGURATION_COUPLED=true
-MATCHED_BASELINE_PHASE_COMPLETE=true
-SAFE_TO_START_MINI_VAE=true
-```
+Non emerge un vincitore universale. I ruoli adottati sono:
+
+- baseline matched primaria: `mini112_pool7/k36`;
+- configurazione con maggiore completeness: `mini75_pool5/k36`;
+- controllo a risoluzione ridotta: `mini75_pool5/k36`;
+- controllo ad alta risoluzione: `mini224_pool14/k36`;
+- controllo legato al numero di classi: `k22`.
+
+La configurazione dell'extractor resta accoppiata alla risoluzione; il
+confronto non supporta quindi un'attribuzione causale alla sola risoluzione.
 
 ## 18. Fonti e checksum
 
@@ -290,10 +283,10 @@ I valori completi e le fonti riga per riga sono in
 `matched_subset1000_no_pca_metrics.csv`; i delta completi sono in
 `matched_subset1000_no_pca_pairwise_deltas.csv`.
 
-## 19. Handoff al mini VAE in C
+## 19. Sintesi
 
-Il confronto matched no-PCA è formalmente completo. Le tre configurazioni
-primarie e di controllo sono congelate su eventi, split e protocollo
-identici. È quindi possibile iniziare il mini VAE in C usando
-`mini112_pool7/k36` come baseline matched primaria, senza alterare le
-baseline e gli artefatti qui confrontati.
+Il confronto matched no-PCA usa eventi, split e protocollo identici per le
+tre configurazioni. `mini112_pool7/k36` costituisce la baseline matched
+primaria, mentre le altre configurazioni mantengono i ruoli di controllo
+descritti sopra. Le conclusioni riguardano le pipeline complete e non isolano
+un effetto causale della sola risoluzione.

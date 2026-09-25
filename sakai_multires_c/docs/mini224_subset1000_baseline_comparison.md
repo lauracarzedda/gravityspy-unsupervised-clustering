@@ -244,18 +244,14 @@ considerarla una vincitrice universale.
 
 ## 16. Ruoli metodologici
 
-```text
-UNIVERSAL_WINNER=false
-PRIMARY_SUBSET224_BASELINE=no_pca_k36
-HIGH_VARIANCE_PCA_ABLATION=pca99_k36
-COMPACT_PCA_ABLATION=pca95_k36
-AGGRESSIVE_COMPRESSION_ABLATION=pca90
-CLASS_COUNT_CONTROL=k22
-MATCHED_SUBSET_COMPARISON_REQUIRED=true
-```
+Non emerge un vincitore universale. La configurazione no-PCA con `k36` è la
+baseline primaria subset224; `pca99/k36` rappresenta l'ablation ad alta
+conservazione della varianza, `pca95/k36` il compromesso compatto e `pca90`
+la compressione aggressiva. `k22` resta il controllo legato al numero di
+classi.
 
 Questi ruoli derivano congiuntamente da protocollo, metriche validation,
-dimensionalità, bilanciamento e confrontabilità futura; non dalla
+dimensionalità, bilanciamento e confronto matched disponibile; non dalla
 massimizzazione isolata di una metrica, da medie arbitrarie o da somme di
 rank. `k=22` resta il controllo coerente con il numero di classi Gravity Spy.
 
@@ -274,8 +270,9 @@ rank. `k=22` resta il controllo coerente con il numero di classi Gravity Spy.
 - Mini224 usa 1000 eventi; le baseline congelate mini75 e mini112 ne usano
   8583. Le differenze osservate non possono essere attribuite causalmente
   alla risoluzione.
-- Il confronto puro della risoluzione richiede un futuro esperimento
-  matched-subset sugli stessi 1000 eventi per mini75, mini112 e mini224.
+- Il confronto osservazionale fra risoluzioni è documentato separatamente
+  mediante il matched-subset sugli stessi 1000 eventi per mini75, mini112 e
+  mini224.
 
 ## 18. File sorgente e SHA-256
 
@@ -312,11 +309,12 @@ ad alta conservazione, compatta e di compressione aggressiva. `k=22` è il
 controllo legato al numero di classi. Questa decisione non usa inerzia
 cross-profile né un ranking aggregato arbitrario.
 
-## 20. Handoff matched-subset 75/112/224
+## 20. Sintesi matched-subset 75/112/224
 
-Il prossimo confronto fra risoluzioni dovrà riutilizzare esattamente gli
+Il confronto matched fra risoluzioni riutilizza esattamente gli
 stessi 1000 eventi, gli stessi prefissi train/validation e lo stesso
-protocollo per mini75, mini112 e mini224. Solo quel disegno matched-subset
-consentirà di isolare il confronto osservazionale fra risoluzioni senza
+protocollo per mini75, mini112 e mini224. Questo disegno matched-subset
+consente il confronto osservazionale fra risoluzioni senza
 confonderlo con la diversa numerosità delle baseline complete mini75 e
-mini112. Il presente documento non crea artefatti matched-subset.
+mini112. I relativi artefatti sono documentati nel report matched-subset
+dedicato.

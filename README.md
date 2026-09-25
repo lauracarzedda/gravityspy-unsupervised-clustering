@@ -15,7 +15,11 @@ Anno Accademico 2025/2026
 
 Questa repository raccoglie il lavoro sperimentale svolto per la tesi sul clustering non supervisionato dei glitch, o transient noise, osservati nei rivelatori interferometrici di onde gravitazionali e rappresentati nel dataset Gravity Spy O1. L'obiettivo è studiare morfologie ricorrenti senza usare le classi note per guidare il training o la costruzione delle partizioni.
 
-Il progetto ricostruisce e adatta il flusso scientifico descritto da Sakai et al. 2022. La pipeline principale `full224`, sviluppata in Python e PyTorch, lavora su viste a risoluzione 224×224. Una componente complementare in C11 documenta contratti, strumenti, test e adattamenti multirisoluzione, con attenzione anche a scenari hardware con risorse limitate. Il lavoro riproduce la sequenza metodologica generale e ne dichiara gli adattamenti, ma non rivendica una replica numerica esatta dei risultati di Sakai.
+Il contributo del progetto consiste nella ricostruzione sperimentale della pipeline descritta da Sakai et al. 2022, nella realizzazione del preprocessing e dei protocolli di riproducibilità e nello sviluppo e nel confronto delle configurazioni ridotte con il riferimento principale. Il lavoro riproduce la sequenza metodologica generale e ne dichiara gli adattamenti, ma non rivendica una replica numerica esatta dei risultati di Sakai. Non viene introdotto un nuovo algoritmo di clustering: l'oggetto dello studio è la realizzazione, l'adattamento e la verifica sperimentale della catena VAE–IIC–spectral.
+
+Le configurazioni `mini75` e `mini112` elaborano in C11 la popolazione comune di 8.583 eventi fino alla matrice di affinity inclusa; il clustering spectral finale utilizza il bridge Python. Il riferimento `full224`, più vicino alla configurazione di Sakai, usa la stessa popolazione in Python/PyTorch su viste 224×224. `mini224_1000` identifica invece l'esperimento separato su una popolazione di mille eventi e non costituisce un quarto punto direttamente confrontabile con gli altri tre rami.
+
+I profili mini studiano la fattibilità della pipeline su hardware locale. Il confronto non intende dimostrare una superiorità del C, ma documenta i compromessi fra risoluzione, capacità del modello, popolazione analizzata e risorse di calcolo.
 
 ## Obiettivo scientifico
 
@@ -103,13 +107,13 @@ cmake --build build
 
 ## Test
 
-La configurazione CTest di default comprende 80 test. Prima dell'inizializzazione Git risultano applicabili 43 test: 29 self-contained e 14 dipendenti soltanto dai metadata inclusi nella release. Tutti i 43 test pre-Git applicabili che dipendono soltanto dal source o dai metadata inclusi hanno superato la verifica.
+La configurazione CTest di default comprende 80 test. Nel checkout leggero risultano applicabili 43 test: 29 self-contained e 14 dipendenti soltanto dai metadata inclusi nella release. Tutti i 43 test che dipendono soltanto dal source o dai metadata inclusi sono stati verificati con esito positivo.
 
 Gli altri 37 test configurati sono intenzionalmente differiti perché richiedono una o più risorse non presenti nel checkout leggero: dataset esterno, checkpoint, embedding `μ`, affinity, artifact spectral, artifact d'integrazione oppure stato VCS. Non sono test falliti. Tre bridge Python spectral aggiuntivi richiedono inoltre lo specifico ambiente scientifico congelato e non sono configurati nel default.
 
 ## Baseline e componenti opzionali
 
-`baseline_kmeans` e `clustering_metrics` sono componenti opzionali già inclusi nella build supportata. Le restanti superfici mini75, mini112, mini224 subset1000, matched subset e le varianti PCA/no-PCA sono conservate soprattutto come sorgenti di riferimento per la riproducibilità e non sono tutte parte della build CMake di default. Le varianti PCA richiedono LAPACKE/BLAS. I programmi top-level numerati da 01 a 06 restano utility manuali di preprocessing.
+`baseline_kmeans` e `clustering_metrics` sono componenti opzionali già inclusi nella build supportata. Le restanti superfici multirisoluzione, matched subset e le varianti PCA/no-PCA sono conservate soprattutto come sorgenti di riferimento per la riproducibilità e non sono tutte parte della build CMake di default. Le varianti PCA richiedono LAPACKE/BLAS. I programmi top-level numerati da 01 a 06 restano utility manuali di preprocessing.
 
 ## Riproducibilità
 
@@ -156,12 +160,12 @@ Quando disponibili, gli artifact congelati consentono una riproduzione per stadi
 - Alcuni integration test restano differiti finché le relative dipendenze esterne non sono disponibili.
 - La build empiricamente documentata usa GNU C su Windows/UCRT; la presenza di altri rami CMake non equivale a una validazione su tutte le piattaforme.
 - Parte delle baseline è mantenuta come source/reference e non appartiene alla superficie di build supportata di default.
-- La pipeline IIC primaria è transduttiva sull'intera popolazione di 8.583 eventi.
+- La pipeline IIC primaria è transduttiva sull'intera popolazione.
 - Le metriche post-hoc descrivono la corrispondenza con le label note e non dimostrano l'esistenza di nuove sottoclassi fisiche.
 
 ## Riferimenti
 
-Il contesto scientifico comprende Sakai et al. 2022, Gravity Spy e i relativi materiali Scientific Reports e Supplemental Material esaminati nel progetto. I riferimenti bibliografici completi e le istruzioni di citazione saranno forniti nei metadata di citazione della release.
+Il contesto scientifico comprende Sakai et al. 2022, Gravity Spy e i relativi materiali Scientific Reports e Supplemental Material esaminati nel progetto. I riferimenti bibliografici principali e le istruzioni di citazione sono raccolti in [CITATION.cff](CITATION.cff).
 
 ## Citazione
 
